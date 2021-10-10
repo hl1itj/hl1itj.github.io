@@ -1,4 +1,7 @@
 ﻿.main{
+	disply : block;
+	margin-left: auto;
+	margin-right: auto;
 	height: auto;
 	width: 300px;
 	border: 1px solid;
