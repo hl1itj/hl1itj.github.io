@@ -1,77 +1,62 @@
-//Kassari Anastasia
-//3130088
+﻿// Minsuk Lee, ykhl1itj@gmail.com
 
-const PREC = 12;
-var initial_val = "", op = "", answer ="0";
+const PRECISION = 15;
+var initial_val = "", op = "", answer = "88";
 var done = true, float_num = false, second_num = false, completed = false ;
 var temp, display;
 
 window.onload = function() {
 	var elements = document.body.getElementsByTagName("*");
-	for (var i =0; i < elements.length; i++) {
+	for (var i = 0; i < elements.length; i++) {
 		switch (elements[i].id) {
+			case "zero": 
+				elements[i].addEventListener("click", function() { number("0"); });
+				break;
 			case "one": 
-				elements[i].addEventListener("click", function(){ number("1"); });
+				elements[i].addEventListener("click", function() { number("1"); });
 				break;
 			case "two": 
-				elements[i].addEventListener("click", function(){ number("2"); });
+				elements[i].addEventListener("click", function() { number("2"); });
 				break;
 			case "three": 
-				elements[i].addEventListener("click", function(){ number("3"); });
+				elements[i].addEventListener("click", function() { number("3"); });
 				break;
 			case "four": 
-				elements[i].addEventListener("click", function(){ number("4"); });
+				elements[i].addEventListener("click", function() { number("4"); });
 				break;
 			case "five": 
-				elements[i].addEventListener("click", function(){ number("5"); });
+				elements[i].addEventListener("click", function() { number("5"); });
 				break;
 			case "six": 
-				elements[i].addEventListener("click", function(){ number("6"); });
+				elements[i].addEventListener("click", function() { number("6"); });
 				break;
 			case "seven": 
-				elements[i].addEventListener("click", function(){ number("7"); });
+				elements[i].addEventListener("click", function() { number("7"); });
 				break;
 			case "eight": 
-				elements[i].addEventListener("click", function(){ number("8"); });
+				elements[i].addEventListener("click", function() { number("8"); });
 				break;
 			case "nine": 
-				elements[i].addEventListener("click", function(){ number("9"); });
+				elements[i].addEventListener("click", function() { number("9"); });
 				break;
-			case "zero": 
-				elements[i].addEventListener("click", function(){ number("0"); });
+			case "point":
+				elements[i].addEventListener("click", point);
 				break;
-				
-			case "pi":
-				elements[i].addEventListener("click", pi);
+			case "sign":
+				elements[i].addEventListener("click", sign);
 				break;
-			case "e":
-				elements[i].addEventListener("click", e);
+			case "delete":
+				elements[i].addEventListener("click", del);
 				break;
-			
-			case "sin":
-				elements[i].addEventListener("click", sin);
-				break;
-			case "cos":
-				elements[i].addEventListener("click", cos);
-				break;
-			case "tan":
-				elements[i].addEventListener("click", tan);
-				break;
-			
+
 			case "log":
 				elements[i].addEventListener("click", log);
-				break;
-			case "ln":
-				elements[i].addEventListener("click", ln);
 				break;
 			case "power2":
 				elements[i].addEventListener("click", power2);
 				break;
-			case "base10":
-				elements[i].addEventListener("click", base10);
-				break;
-			case "exp":
-				elements[i].addEventListener("click", exp);
+			case "powery":
+				elements[i].addEventListener("click", powery);
 				break;
 			case "sqrt":
 				elements[i].addEventListener("click", sqrt);
@@ -82,31 +67,26 @@ window.onload = function() {
 			case "fraction":
 				elements[i].addEventListener("click", fraction);
 				break;
-			
-			case "percent":
-				elements[i].addEventListener("click", percent);	
+			case "hexa":
+				elements[i].addEventListener("click", hexa);
+				break;
+			case "tax88":
+				elements[i].addEventListener("click", tax88);
+				break;
+			case "tax33":
+				elements[i].addEventListener("click", tax33);
 				break;
 			case "add":
-				elements[i].addEventListener("click", function(){ basic("+"); });
+				elements[i].addEventListener("click", function() { basic("+"); });
 				break;
 			case "sub":
-				elements[i].addEventListener("click", function(){ basic("-"); });
+				elements[i].addEventListener("click", function() { basic("-"); });
 				break;
 			case "mul":
-				elements[i].addEventListener("click", function(){ basic("*"); });
+				elements[i].addEventListener("click", function() { basic("*"); });
 				break;
 			case "div":
-				elements[i].addEventListener("click", function(){ basic("/"); });
-				break;
-			case "powerY":
-				elements[i].addEventListener("click", function(){ basic("^"); });
-				break;
-			
-			case "diastole":
-				elements[i].addEventListener("click", diastole);
-				break;
-			case "sign":
-				elements[i].addEventListener("click", sign);
+				elements[i].addEventListener("click", function() { basic("/"); });
 				break;
 			case "equal":
 				elements[i].addEventListener("click", equal);
@@ -114,21 +94,14 @@ window.onload = function() {
 			case "clear":
 				elements[i].addEventListener("click", function() { reset("0");});
 				break;
-			case "delete":
-				elements[i].addEventListener("click", del);
-				break;
-			case "answ":
-				elements[i].addEventListener("click", answ);
-				break;
 			default:
 				break;
 		}
 	}
-	/*  */
 }
 
-function number(input){
-	display = document.getElementById("result");
+function number(input) {
+	display = document.getElementById("lcd");
 	temp = display.value;
 	
 	if (display.value.match(/[a-z]/i))
@@ -142,7 +115,7 @@ function number(input){
 	if (display.value == "0")
 		temp = input;
 	else {
-		if (temp.length < PREC)
+		if (temp.length < PRECISION)
 			temp += input;
 	}
 	display.value = temp;
@@ -150,150 +123,8 @@ function number(input){
 	toExp();
 }
 
-// Number pi
-function pi(){
-	display = document.getElementById("result");
-	display.value = Math.PI;
-	completed = true;
-	answer = display.value;
-	toExp();
-}
-
-//Number e
-function e(){
-	display = document.getElementById("result");
-	display.value = Math.E
-	completed = true;;
-	answer = display.value;
-	toExp()
-}
-
-//Return answer
-function answ() {
-	display = document.getElementById("result");
-	display.value = answer;
-	completed = true;
-	toExp();	
-}
-
-/*
- * One variable operations
- */
-
-//Function sin(x)
-function sin(){
-	temp = document.getElementsByName("angle");
-	if (temp[0].checked)
-		answer *= Math.PI/180;
-	if (temp[1].checked && answer == Math.PI)
-		answer = 0;
-	else { 
-		if (answer == "")
-			answer = Math.sin(0);
-		else	
-			answer = Math.sin(answer);
-	}
-	reset(answer);
-}
-
-//Function cos(x)
-function cos(){
-	temp = document.getElementsByName("angle");
-	if (temp[0].checked)
-		answer *= Math.PI/180;
-	if (answer == "")
-		answer = Math.cos(0);
-	else	
-		answer = Math.cos(answer);
-	reset(answer);
-}
-
-//Function tan(x)
-function tan(){
-	temp = document.getElementsByName("angle");
-	if (temp[0].checked)
-		answer *= Math.PI/180;
-	if (temp[1].checked && answer == Math.PI)
-		answer = 0;
-	else {
-		if (answer == "")
-			answer = Math.tan(0);
-		else	
-			answer = Math.tan(answer);
-	}
-	reset(answer);
-}
-
-//Function log(x)
-function log() {
-	display = document.getElementById("result");
-	answer = Math.log(display.value) / Math.LN10;
-	answer = (answer*1).toString();
-	reset(answer);
-}
-
-//Function ln(x)
-function ln() {
-	display = document.getElementById("result");
-	answer = Math.log(display.value);
-	answer = (answer*1).toString();
-	reset(answer);
-}
-
-//Function x^2
-function power2() {
-	display = document.getElementById("result");
-	answer = Math.pow(display.value, 2);
-	answer = (answer*1).toString();
-	reset(answer);
-}
-
-//Function 10^x
-function base10() {
-	display = document.getElementById("result");
-	answer = Math.pow(10, display.value);
-	answer = (answer*1).toString();
-	reset(answer);
-}
-
-//Function e^x
-function exp() {
-	display = document.getElementById("result");
-	answer = Math.pow(Math.E, display.value);
-	answer = (answer*1).toString();
-	reset(answer);
-}
-
-//Function sqrt(x)
-function sqrt() {
-	display = document.getElementById("result");
-	answer = Math.sqrt(display.value);
-	answer = (answer*1).toString();
-	reset(answer);
-}
-
-//Function 1/x
-function fraction() {
-	display = document.getElementById("result");
-	answer = eval("1/"+display.value);
-	answer = (answer*1).toString();
-	reset(answer);
-}
-
-//Function x!
-function factorial() {
-	display = document.getElementById("result");
-	answer = fact(display.value);
-	if (answer == 0)
-		answer = "Cannot calculate";
-	else 
-		answer = (answer*1).toString();
-	reset(answer);
-}
-
-//Insert .
-function diastole(){
-	display = document.getElementById("result");
+function point() {
+	display = document.getElementById("lcd");
 	temp = display.value;
 	if (display.value.match(/[a-z]/i))
 		display.value = "0";
@@ -303,12 +134,117 @@ function diastole(){
 		completed = false;
 		float_num = true;
 	}
-	
 }
 
-//Basic operations: +, -, *, /, ^
-function basic(operator){	
-	display = document.getElementById("result");
+function sign() {
+	display = document.getElementById("lcd");
+	if (display.value != "0") {
+		if (display.value[0] == "-")
+			display.value = display.value.substr(1, display.value.length);
+		else
+			display.value = "-" + display.value; 
+	}
+	answer = display.value;
+	toExp();
+}
+
+function del() {
+	display = document.getElementById("lcd");
+	if ((display.value.length <= 1) || display.value.match(/[a-z]/i)) {
+		display.value = "0";
+		float_num = false;
+	}
+	else  {
+		if (display.value.substr(display.value.length - 1) == ".")
+			float_num = false;
+		display.value = display.value.substr(0, display.value.length-1);		
+	}
+	answer = display.value;
+	toExp();
+}
+
+/* Unary Operations */
+
+function log() {
+	display = document.getElementById("lcd");
+	answer = Math.log(display.value) / Math.LN10;
+	answer = (answer * 1).toString();
+	reset(answer);
+}
+
+function power2() {
+	display = document.getElementById("lcd");
+	answer = Math.pow(display.value, 2);
+	answer = (answer*1).toString();
+	reset(answer);
+}
+
+function sqrt() {
+	display = document.getElementById("lcd");
+	answer = Math.sqrt(display.value);
+	answer = (answer*1).toString();
+	reset(answer);
+}
+
+function fraction() {
+	display = document.getElementById("lcd");
+	answer = eval("1/"+display.value);
+	answer = (answer*1).toString();
+	reset(answer);
+}
+
+function factorial() {
+	display = document.getElementById("lcd");
+	answer = fact(display.value);
+	if (answer == 0)
+		answer = "Cannot calculate";
+	else 
+		answer = (answer*1).toString();
+	reset(answer);
+}
+
+function tax88() {
+	display = document.getElementById("lcd");
+	answer = eval(display.value+"/0.912");
+	answer = (answer * 1).toString();
+	reset(answer);
+
+	reset(answer);
+}
+
+function tax33() {
+	display = document.getElementById("lcd");
+	answer = eval(display.value+"/0.967");
+	answer = (answer * 1).toString();
+	reset(answer);
+
+	reset(answer);
+}
+
+// Compute factorial of n (n = integer)
+function fact(n) {
+	if (n.toString().indexOf(".") != -1) {
+		console.log("Cannot calculate factorial for float numbers!");
+		return 0;
+	}
+	else {
+		try {
+			if (n == 0)
+				return 1;
+			else
+				return n * fact(n-1);
+		}
+		catch (err) {
+			console.log("Cannot calculate factorial for big numbers!")
+			reset("NaN");
+		}
+	}
+}
+
+// Binary operations: +, -, *, /, ^
+
+function basic(operator) {	
+	display = document.getElementById("lcd");
 	if (op == "") {
 		initial_val = display.value;
 		op = operator;
@@ -326,10 +262,9 @@ function basic(operator){
 	second_num = true;
 }
 
-//Find result =
-function equal(){
-	display = document.getElementById("result");
-	if (completed && op!="") {
+function equal() {
+	display = document.getElementById("lcd");
+	if (completed && op != "") {
 		if (op =="^")
 			answer = Math.pow(initial_val, display.value);
 		else {
@@ -341,51 +276,9 @@ function equal(){
 	}
 }
 
-//Percent
-function percent(){
-	display = document.getElementById("result");
-	if (op != "") {
-		answer = eval(initial_val+"*"+display.value+"/100");
-		answer = (answer*1).toString();
-		display.value = answer;
-		toExp();
-	}
-	
-}
-
-//Add/remove -
-function sign(){
-	display = document.getElementById("result");
-	if (display.value != "0") {
-		if (display.value[0] == "-")
-			display.value = display.value.substr(1, display.value.length);
-		else
-			display.value = "-" + display.value; 
-	}
-	answer = display.value;
-	toExp();
-}
-
-//Delete last input
-function del() {
-	display = document.getElementById("result");
-	if ((display.value.length <= 1) || display.value.match(/[a-z]/i)) {
-		display.value = "0";
-		float_num = false;
-	}
-	else  {
-		if (display.value.substr(display.value.length-1) == ".")
-			float_num = false;
-		display.value = display.value.substr(0, display.value.length-1);		
-	}
-	answer = display.value;
-	toExp();
-}
-
-//Reset display to val and all other properties to initial values
 function reset(val) {
 	//set display value
-	document.getElementById("result").value = val;
+	document.getElementById("lcd").value = val;
 	toExp();
 	//reset all properties
 	initial_val = "";
@@ -395,29 +288,9 @@ function reset(val) {
 	completed = false;
 }
 
-//Compute factorial of n (n = integer)
-function fact(n) {
-	if (n.toString().indexOf(".") != -1) {
-		console.log("Cannot calculate factorial for float numbers!");
-		return 0;
-	}
-	else {
-		try {
-			if (n == 0)
-				return 1;
-			else
-				return n*fact(n-1);
-		}
-		catch (err) {
-			console.log("Cannot calculate factorial for big numbers!")
-			reset("NaN");
-		}
-	}
-}
-
-//If display value is bigger than PREC digits, we make it in scientific notation
+// if Result is too big to display, make it scientific notation
 function toExp() {
-	display = document.getElementById("result");
-	if (display.value.length > PREC)
-		display.value = (Number(display.value).toExponential(PREC)*1).toString();	
+	display = document.getElementById("lcd");
+	if (display.value.length > PRECISION)
+		display.value = (Number(display.value).toExponential(PRECISION)*1).toString();	
 }
