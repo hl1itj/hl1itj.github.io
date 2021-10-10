@@ -1,6 +1,6 @@
 ﻿.main{
 	height: auto;
-	width: 280px;
+	width: 300px;
 	border: 1px solid;
 	border-radius: 6px;
 	border-color: black;
@@ -30,8 +30,8 @@ button {
 	border-radius: 12px;
 	border-style: none;
 	margin: 1px 1px 1px 1px;
-	width: 60px;
-	height: 60px;
+	width: 65px;
+	height: 65px;
 	font-size: 1.8em;
 }
 
