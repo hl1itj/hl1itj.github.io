@@ -1,6 +1,6 @@
 ﻿// Minsuk Lee, ykhl1itj@gmail.com
 
-const PRECISION = 15;
+const DIGITS = 15;
 var initial_val = "", op = "", answer = "88";
 var done = true, float_num = false, second_num = false, completed = false ;
 var temp, display;
@@ -115,7 +115,7 @@ function number(input) {
 	if (display.value == "0")
 		temp = input;
 	else {
-		if (temp.length < PRECISION)
+		if (temp.length < DIGITS)
 			temp += input;
 	}
 	display.value = temp;
@@ -291,6 +291,6 @@ function reset(val) {
 // if Result is too big to display, make it scientific notation
 function toExp() {
 	display = document.getElementById("lcd");
-	if (display.value.length > PRECISION)
-		display.value = (Number(display.value).toExponential(PRECISION)*1).toString();	
+	if (display.value.length > DIGITS)
+		display.value = (Number(display.value).toExponential(DIGITS)*1).toString();	
 }
