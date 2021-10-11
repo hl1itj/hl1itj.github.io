@@ -1,5 +1,9 @@
 ﻿// Minsuk Lee, ykhl1itj@gmail.com
 
+// https://blog.cordelia273.space/32
+// https://velog.io/@whwodgns/JS-%EA%B3%84%EC%82%B0%EA%B8%B0-%EB%A7%8C%EB%93%A4%EA%B8%B0
+// https://minimal-dev.tistory.com/16
+
 const DIGITS = 15;
 var initial_val = "", op = "", answer = "88";
 var done = true, float_num = false, second_num = false, completed = false ;
