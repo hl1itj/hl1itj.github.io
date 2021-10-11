@@ -3,60 +3,58 @@
 
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title> Calculator </title>
-		<link rel="stylesheet" type="text/css" href="style.css">
-		<script type="text/javascript" src="calculate.js"></script>
-	</head>
-	<body>
-		<div class="main" align="center">
-		
-			<div id="screen">
-				<input type="text" id="lcd" value="0" maxlength="15" readonly/>
-			</div>
-			
-			<div id="button_sci">
-				<button id="log" class="ops"> log </button>
-				<button id="power2" class="ops"> <sub>X</sub><sup>2</sup></button>
-<!-- 				<button id="sqrt" class="ops"> &radic; </button>
- 				<button id="sqrt" class="ops"><sub>X</sub><sup>.5</sup></button> -->
- 				<button id="sqrt" class="ops"> &radic;X</button>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title> Calculator </title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="calculator.js"></script>
+  </head>
+  <body>
+    <div class="main" align="center">
+    
+      <div id="screen">
+        <input type="text" id="lcd" value="0" maxlength="15" readonly/>
+      </div>
+      
+      <div id="button_sci">
+        <button id="log" class="ops"> log </button>
+        <button id="power2" class="ops"> <sub>X</sub><sup>2</sup></button>
+        <button id="sqrt" class="ops"> &radic;X</button>
 
-				<button id="factorial" class="ops"> x! </button>				
-				<button id="fraction" class="ops"> <sup>1</sup>&frasl;<sub>X</sub> </button>
-				<button id="hex" class="ops"> 0x </button>
-				<button id="tax88" class="ops"> 88 </button>	
-				<button id="tax33" class="ops"> 33 </button>	
-			</div>
-			
-			<div id="button_calc">
-			
-				<button id="clear" class="ops"> AC </button>
-				<button id="sign" class="ops"> &plusmn; </button>
-				<button id="powerY" class="ops"> <sub>X</sub><sup>y</sup> </button>	
-				<button id="div" class="ops"> / </button>	
+        <button id="factorial" class="ops"> x! </button>        
+        <button id="fraction" class="ops"> <sup>1</sup>&frasl;<sub>X</sub> </button>
+        <button id="hex" class="ops"> 0x </button>
+        <button id="tax88" class="ops"> 88 </button>  
+        <button id="tax33" class="ops"> 33 </button>  
+      </div>
+      
+      <div id="button_calc">
+      
+        <button id="clear" class="ops"> AC </button>
+        <button id="sign" class="ops"> &plusmn; </button>
+        <button id="powery" class="ops"> <sub>X</sub><sup>y</sup> </button> 
+        <button id="div" class="ops"> / </button> 
 
-				<button id="seven" class="num"> 7 </button> 
-				<button id="eight" class="num"> 8 </button> 
-				<button id="nine" class="num"> 9 </button>
-				<button id="mul" class="ops"> X </button>
-				
-				<button id="four" class="num"> 4 </button>
-				<button id="five" class="num"> 5 </button>
-				<button id="six" class="num"> 6 </button>
-				<button id="sub" class="ops"> &dash; </button>
-				
-				<button id="one" class="num"> 1 </button>
-				<button id="two" class="num"> 2 </button>
-				<button id="three" class="num"> 3 </button>
-				<button id="add" class="ops"> + </button>  					
-				
-				<button id="zero" class="num"> 0 </button>
-				<button id="point" class="num"> . </button>
-				<button id="del" class="ops"> &larr; </button> 
-				<button id="equal" class="ops"> = </button>
-			</div>
-		</div>
-	</body>
+        <button id="seven" class="num"> 7 </button> 
+        <button id="eight" class="num"> 8 </button> 
+        <button id="nine" class="num"> 9 </button>
+        <button id="mul" class="ops"> X </button>
+        
+        <button id="four" class="num"> 4 </button>
+        <button id="five" class="num"> 5 </button>
+        <button id="six" class="num"> 6 </button>
+        <button id="sub" class="ops"> &dash; </button>
+        
+        <button id="one" class="num"> 1 </button>
+        <button id="two" class="num"> 2 </button>
+        <button id="three" class="num"> 3 </button>
+        <button id="add" class="ops"> + </button>           
+        
+        <button id="zero" class="num"> 0 </button>
+        <button id="point" class="num"> . </button>
+        <button id="del" class="ops"> &larr; </button> 
+        <button id="equal" class="ops"> = </button>
+      </div>
+    </div>
+  </body>
 </html>

@@ -1,55 +1,55 @@
 ﻿.main{
-	disply : block;
-	margin-left: auto;
-	margin-right: auto;
-	height: auto;
-	width: 300px;
-	border: 1px solid;
-	border-radius: 6px;
-	border-color: black;
-	color: black;
-	background-color: skyblue;
-	font-family: Verdana, Geneva, sans-serif;
+  disply : block;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  width: 300px;
+  border: 1px solid;
+  border-radius: 6px;
+  border-color: black;
+  color: black;
+  background-color: skyblue;
+  font-family: Verdana, Geneva, sans-serif;
 }
 
 .main div {
-	margin-top: 8px;
-	margin-bottom: 5px;
+  margin-top: 8px;
+  margin-bottom: 5px;
 }
 
 #lcd {
-	height: auto;
-	width: 260px;
-	color: black;
-	border-style: none;
-	background-color: ghostwhite;
-	margin: 10px 0px 10px 0px;
-	text-align: right;
-	font-size: 2.0em;
+  height: auto;
+  width: 280px;
+  color: black;
+  border-style: none;
+  background-color: ghostwhite;
+  margin: 10px 0px 10px 0px;
+  text-align: right;
+  font-size: 2.0em;
 }
 
 button {
-	color: black;
-	border-radius: 12px;
-	border-style: none;
-	margin: 1px 1px 1px 1px;
-	width: 65px;
-	height: 65px;
-	font-size: 1.4em;
+  color: black;
+  border-radius: 12px;
+  border-style: none;
+  margin: 1px 1px 1px 1px;
+  width: 65px;
+  height: 65px;
+  font-size: 1.4em;
 }
 
 #button_sci button {
-	background-color: #AAAAAA;
+  background-color: #AAAAAA;
 }
 
 #button_calc button {
-	background-color: seagreen;	
+  background-color: seagreen; 
 }
 
 #clear, #del, #equal {
-	background-color: dimgray !important;
+  background-color: dimgray !important;
 }
 
 #sign, #powerY, #add, #sub, #mul, #div {
-	background-color: gray !important;
+  background-color: gray !important;
 }
