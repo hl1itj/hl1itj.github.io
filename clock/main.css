@@ -8,11 +8,11 @@ body{
     background-color: rgb(61, 61, 61);  /* 회색 */
 }
 .date{
-    font-size: 90px; 
+    font-size: 100px; 
     color: rgb(255, 255, 255);  /* 흰색 */
 }
 .time{
-    font-size: 180px;
+    font-size: 220px;
     font-weight: bold;
     color: rgb(255, 255, 0);  /*보라색 */
 }
